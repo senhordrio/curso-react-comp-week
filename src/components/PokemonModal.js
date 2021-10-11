@@ -6,21 +6,12 @@ import {
     ModalBody,
     ModalCloseButton
 } from "@chakra-ui/react"
-
-import styled from "styled-components"
-
-import { PokedexLoading } from "./PokedexLoading"
-import { PokemonImage } from "./PokemonImage"
 import { useState, useEffect } from "react"
 import { fetchPokemon } from "../services"
-import { colours } from "../data/colours"
+import { PokedexLoading } from "./PokedexLoading"
+import { PokemonImage } from "./PokemonImage"
 import { PokemonName } from "./PokemonName"
-
-const PokemonType = styled.div`
-    background-color: ${props => colours[props.color]};
-    color: white;
-    border-radius: 5px;
-`
+import { PokemonType } from "./PokemonType"
 
 export function PokemonModal(props) {
     const { isOpen, onClose, pokemonName } = props
@@ -70,9 +61,7 @@ export function PokemonModal(props) {
                                 <PokemonImage url={pokemon.image} />
                                 <div>Id: {pokemon.id}</div>
                                 <div>Altura: {pokemon.height}</div>
-                                <PokemonType color={pokemon.type}>
-                                    Tipo: {pokemon.type}
-                                </PokemonType>
+                                <PokemonType type={pokemon.type} />
                             </ModalBody>
                         </ModalContent>
                     </ModalOverlay>
