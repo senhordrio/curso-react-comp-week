@@ -4,7 +4,7 @@ const CustomPokedexNavbar = styled.div`
     display: flex;
     width: 100%;
     height: 100px;
-    background-color: lightblue;
+    background-color: #dc0a2d;
     top: 0;
     color: white;
     align-items: center;
@@ -17,5 +17,5 @@ const CustomPokedexNavbar = styled.div`
 `
 
 export function PokedexNavbar() {
-    return <CustomPokedexNavbar>Pokedex</CustomPokedexNavbar>
+    return <CustomPokedexNavbar>Pokédex</CustomPokedexNavbar>
 }

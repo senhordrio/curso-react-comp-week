@@ -17,7 +17,9 @@ import { fetchPokemon } from "../services"
 import { colours } from "../data/colours"
 
 const PokemonType = styled.div`
-    color: ${props => colours[props.color]};
+    background-color: ${props => colours[props.color]};
+    color:white;
+    border-radius: 5px;
 `
 
 export function PokemonModal(props) {
