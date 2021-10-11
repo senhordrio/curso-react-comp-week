@@ -36,7 +36,7 @@ export function Pokedex() {
 
     useEffect(() => {
         fetchData()
-    }, [setPokemons])
+    }, [])
 
     const renderPokemons = pokemons.map(element => (
         <PokemonCard
