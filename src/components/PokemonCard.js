@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { PokemonImage } from "./PokemonImage"
+import { PokemonName } from "./PokemonName"
 
 const CardContainer = styled.div`
     display: flex;
@@ -17,15 +18,13 @@ const CardContainer = styled.div`
     }
 `
 
-const PokemonNane = styled.div``
-
 export function PokemonCard(props) {
     const { name, image, onClick } = props
 
     return (
         <CardContainer onClick={onClick}>
-            <PokemonImage url={image} loading="lazy"></PokemonImage>
-            <PokemonNane>{name}</PokemonNane>
+            <PokemonImage url={image} loading="lazy" />
+            <PokemonName name={name} />
         </CardContainer>
     )
 }

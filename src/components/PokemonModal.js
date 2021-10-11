@@ -3,7 +3,6 @@ import {
     Modal,
     ModalOverlay,
     ModalContent,
-    ModalHeader,
     ModalBody,
     ModalCloseButton
 } from "@chakra-ui/react"
@@ -15,10 +14,11 @@ import { PokemonImage } from "./PokemonImage"
 import { useState, useEffect } from "react"
 import { fetchPokemon } from "../services"
 import { colours } from "../data/colours"
+import { PokemonName } from "./PokemonName"
 
 const PokemonType = styled.div`
     background-color: ${props => colours[props.color]};
-    color:white;
+    color: white;
     border-radius: 5px;
 `
 
@@ -56,7 +56,10 @@ export function PokemonModal(props) {
                 pokemon && (
                     <ModalOverlay>
                         <ModalContent>
-                            <ModalHeader>{pokemon.name}</ModalHeader>
+                            <PokemonName
+                                name={pokemon.name}
+                                isModalName={true}
+                            />
                             <ModalCloseButton />
 
                             <ModalBody
